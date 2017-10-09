@@ -12,17 +12,6 @@
     
 	require_once('dbConnect.php');
 
-	if(mysqli_query($con,$sql)){
-
-		echo json_encode(array('status' => "success"));
-
-		notify();
-	
-	}else{
-
-		echo json_encode(array('status' => "fail", 'result'=>"Server error! Try later"));
-	}
-
 	function send_notification ($tokens, $message)
 	{
 		$url = 'https://fcm.googleapis.com/fcm/send';
@@ -47,24 +36,32 @@
            die('Curl failed: ' . curl_error($ch));
        }
        curl_close($ch);
-       return $result;
+       //echo $result;
 	}
 
-	function notify() {
+	if(mysqli_query($con,$sql)){
 
-		$sqli = "select token From users Where id='26'";
-		$result = mysqli_query($con,$sqli);
+		echo json_encode(array('status' => "success"));
+
+		$sqli = "SELECT `token` FROM `users` WHERE `number` != '$r_number' AND `pincode` = '$pincode' AND `utype` = 'Donor' AND `btype` = '$btype'";
+
+		$res = mysqli_query($con,$sqli);
+		
 		$tokens = array();
-		if(mysqli_num_rows($result) > 0 ){
-			while ($row = mysqli_fetch_assoc($result)) {
+		
+		if(mysqli_num_rows($res) > 0 ){
+			while ($row = mysqli_fetch_assoc($res)) {
 				$tokens[] = $row["token"];
 			}
 		}
-
+		
 		$message = array("message" => "Maa chod duga teri Bhosdi k");
-		$message_status = send_notification($tokens, $message);
-		echo $message_status;
+		send_notification($tokens, $message);
+		// echo $message_status;
+	
+	}else{
 
+		echo json_encode(array('status' => "fail", 'result'=>"Server error! Try later"));
 	}
 	
 	mysqli_close($con);

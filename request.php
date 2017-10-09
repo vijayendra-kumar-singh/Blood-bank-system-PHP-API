@@ -43,7 +43,7 @@
 
 		echo json_encode(array('status' => "success"));
 
-		$sqli = "SELECT `token` FROM `users` WHERE `pincode` = '$pincode' AND `utype` = 'Donor' AND `btype` = '$btype'";
+		$sqli = "SELECT `token` FROM `users` WHERE `number` != '$r_number' AND `pincode` = '$pincode' AND `utype` = 'Donor' AND `btype` = '$btype'";
 
 		$res = mysqli_query($con,$sqli);
 		
@@ -54,11 +54,12 @@
 				$tokens[] = $row["token"];
 			}
 		}
-		
-		$message = array("message" => "Maa chod duga teri Bhosdi k");
+		if(sizeOf($tokens)>0){
+		$message = array("message" => "New request from $name. Check out Now!");
 		send_notification($tokens, $message);
 		// echo $message_status;
-	
+		}
+
 	}else{
 
 		echo json_encode(array('status' => "fail", 'result'=>"Server error! Try later"));

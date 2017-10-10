@@ -25,7 +25,8 @@
 	            "age"=>$row['age'],
 	            "number"=>$row['number'],
 	            "pincode"=>$row['pincode'],
-	            "btype"=>$row['btype']
+				"btype"=>$row['btype'],
+				"sex"=>$row['sex']
 			));
 		}
 

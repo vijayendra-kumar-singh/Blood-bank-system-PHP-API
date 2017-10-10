@@ -43,7 +43,7 @@
 
 		echo json_encode(array('status' => "success"));
 
-		$sqli = "SELECT `token` FROM `users` WHERE `number` != '$r_number' AND `pincode` = '$pincode' AND `utype` = 'Donor' AND `btype` = '$btype'";
+		$sqli = "SELECT `token` FROM `users` WHERE `pincode` = '$pincode' AND `utype` = 'Donor' AND `btype` = '$btype'";
 
 		$res = mysqli_query($con,$sqli);
 		

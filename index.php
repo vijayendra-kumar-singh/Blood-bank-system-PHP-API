@@ -8,7 +8,7 @@ echo '<html>
 
 <h1 style="font:Helvetica">Blood Help India</h1>
 
-<a href="http://www.yourfilelink.com/get.php?fid=1420284"><h3>Get the app here</h3></a>
+<a href="http://www.yourfilelink.com/get.php?fid=1420284&dv=1"><h3>Get the app here</h3></a>
 
 </center>
 

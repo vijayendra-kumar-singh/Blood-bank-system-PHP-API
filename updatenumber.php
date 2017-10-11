@@ -16,11 +16,12 @@
 		
 			if(mysqli_query($con,$q)){
 
-				$qq = "UPDATE requests SET r_number = '$number' WHERE r_number = $number;";
-
-				mysqli_query($con,$qq);
 
 				echo json_encode(array('status'=>"success", 'number'=>$number));
+
+				$qq = "UPDATE requests SET r_number = '$number' WHERE r_number = $base_number;";
+
+				mysqli_query($con,$qq);
 
 			} else {
 

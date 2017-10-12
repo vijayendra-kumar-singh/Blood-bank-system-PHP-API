@@ -28,7 +28,7 @@
 
 				echo json_encode(array('status'=>"success", 'result'=>$pass));
 				
-				sendOTP($number, $con, $otp);
+				//sendOTP($number, $con, $otp);
 
 			} else {
 

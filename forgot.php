@@ -13,22 +13,7 @@
 		
 		$url = "http://smsapi.engineeringtgr.com/send/?Mobile=9003692804&Password=456835459&Message=Your%20new%20password%20is%20$otp.&To=$number";
 
-		$data = curl_get_contents($url);
-		
-		$r = explode("<div style", $data);
-		
-		$re = json_decode($r[0], true);
-
-		if($re['status'] != "error"){
-
-			echo json_encode(array('status'=>"success", 'result'=>$pass));
-
-		} else {
-
-			echo json_encode(array('status'=>"success", 'result'=>$pass));
-
-		}		
-		
+		$data = curl_get_contents($url);		
 	}
 
 	if(isset($check)){
@@ -41,6 +26,8 @@
 		
 			if(mysqli_query($con,$q)){
 
+				echo json_encode(array('status'=>"success", 'result'=>$pass));
+				
 				sendOTP($number, $con, $otp);
 
 			} else {

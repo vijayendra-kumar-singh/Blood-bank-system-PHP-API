@@ -1,6 +1,6 @@
 <?php
 
-	$number = $_GET['number'];
+	$number = $_POST['number'];
 
 	$otp = rand(100000,999999);
 

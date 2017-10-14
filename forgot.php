@@ -11,7 +11,7 @@
 
 	if(isset($check)){
 
-		$pass = rand(1000,9999);
+		$pass = rand(100000,999999);
 
 		$password = password_hash($pass, PASSWORD_DEFAULT);
 

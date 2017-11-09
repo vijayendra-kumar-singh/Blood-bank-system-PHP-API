@@ -4,12 +4,12 @@
     $message = $_GET['message'];
 
     
-	function send_notification ($tokens, $message)
+	function send_notification ($tokens, $messages)
 	{
 		$url = 'https://fcm.googleapis.com/fcm/send';
 		$fields = array(
 			 'registration_ids' => $tokens,
-			 'data' => $message
+			 'data' => $messages
 			);
 		$headers = array(
 			'Authorization:key = AAAAG_sg7i0:APA91bH0CbymI1JYgNwGAPv_ehnhnh_hFKViDXFHHZyv9kAtM2tLftJ__Eqc5LOu9Drpj4OR9qSceaRkMsTR_rVN7Lz_Ggru00cIBtwwBLGbe6p_qa5J5zWFaSIFdOxZcDqlfrapMqR1',
@@ -28,7 +28,7 @@
            die('Curl failed: ' . curl_error($ch));
        }
        curl_close($ch);
-       //echo $result;
+       echo $result;
 	}
 
     $tokens = array();  
@@ -36,5 +36,5 @@
     $tokens[] = $token;
 
     print_r($tokens);
-//     $messages = array("message" => $message);
-//     send_notification($tokens, $messages);
+    $messages = array("message" => $message);
+    send_notification($tokens, $messages);

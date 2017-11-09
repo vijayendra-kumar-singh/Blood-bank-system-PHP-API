@@ -33,8 +33,8 @@
 
     $tokens = array();  
 
-    print_r($tokens);
+    $tokens[] = $token;
 
-//     $tokens[] = $token;
+    print_r($tokens);
 //     $messages = array("message" => $message);
 //     send_notification($tokens, $messages);

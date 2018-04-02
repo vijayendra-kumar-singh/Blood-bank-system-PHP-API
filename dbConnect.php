@@ -1,8 +1,8 @@
 <?php
 
 	define('HOST','sql12.freesqldatabase.com');
-	define('USER','sql12216007');
-	define('PASS','T4W8Hn5DGf');
-	define('DB','sql12216007');
+	define('USER','sql12230122');
+	define('PASS','DwFSHFLhTE');
+	define('DB','sql12230122');
 	
 	$con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');

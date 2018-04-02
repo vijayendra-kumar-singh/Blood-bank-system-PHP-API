@@ -1,14 +1,14 @@
 <?php
 
-    $name = $_GET['name'];
-    $number = $_GET['number'];
-    $age = $_GET['age'];
-    $pincode = $_GET['pincode'];
-    $pass = $_GET['password'];
-    $btype = $_GET['btype'];
-    $utype = $_GET['utype'];
-    $token = $_GET['token'];
-    $sex = $_GET['sex'];
+    $name = $_POST['name'];
+    $number = $_POST['number'];
+    $age = $_POST['age'];
+    $pincode = $_POST['pincode'];
+    $pass = $_POST['password'];
+    $btype = $_POST['btype'];
+    $utype = $_POST['utype'];
+    $token = $_POST['token'];
+    $sex = $_POST['sex'];
 
     $password = password_hash($pass, PASSWORD_DEFAULT);
 

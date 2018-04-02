@@ -7,8 +7,8 @@
 	// $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 
 	define('HOST','localhost');
-	define('USER','root');
-	define('PASS','');
-	define('DB','blood_bbank');
+	define('USER','sql12230122');
+	define('PASS','DwFSHFLhTE');
+	define('DB','sql12230122');
 	
 	$con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');

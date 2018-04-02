@@ -18,10 +18,10 @@
 
     if(mysqli_query($con,$sql)){
 
-        echo json_encode(array('status'=>"success", 'result'=>$utype));
+        echo json_encode(array('status'=>"success", 'result'=>$utype, 'QUERY'=>$sql));
 
     }else{
         
-        echo json_encode(array('status'=>"fail", 'result'=>"server error"));
+        echo json_encode(array('status'=>"fail", 'result'=>"server error", 'QUERY'=>$sql));
     }
     mysqli_close($con);

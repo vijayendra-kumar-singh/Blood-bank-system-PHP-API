@@ -34,7 +34,7 @@
 
             $open = "NA";
 
-            if(isset($value['opening_hours'])) {
+            if(isset($value['opening_hours']['open_now'])) {
                 if ($value['opening_hours']['open_now'] == true){
                     $open = "Yes";
                 } else if ($value['opening_hours']['open_now'] == false) {

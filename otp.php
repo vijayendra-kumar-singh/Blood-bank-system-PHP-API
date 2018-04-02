@@ -26,7 +26,7 @@
 		
 		$re = json_decode($r[0], true);
 
-		if($re['status'] != "error"){
+		// if($re['status'] != "error"){
 
 			$q = "DROP TABLE IF EXISTS `".$number."`";
 			
@@ -42,11 +42,11 @@
 	
 			echo json_encode(array('status'=>"success",'number'=>$number, 'otp'=>$otp));
 
-		} else {
+		// } else {
 
-			echo json_encode(array('status'=>"fail",'result'=>"Server error!"));
+		// 	echo json_encode(array('status'=>"fail",'result'=>"Server error!"));
 
-		}		
+		// }		
 		
 	}
 

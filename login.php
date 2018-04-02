@@ -29,6 +29,3 @@
 		echo json_encode(array('status'=>"no such user"));
 	}
 	mysqli_close($con);
-
-
-	
